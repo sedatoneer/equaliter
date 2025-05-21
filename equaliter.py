@@ -7,7 +7,7 @@ import numpy as np
 import random
 import os
 
-# --- Şarkı seçme menüsü pygame ayarları ---
+# Şarkı seçme menüsü pygame ayarları
 pygame.init()
 screen = pygame.display.set_mode((920, 700))
 pygame.display.set_caption("Equaliter - Şarkı Seç")
@@ -49,7 +49,7 @@ def draw_menu():
     pygame.display.flip()
 
 
-# --- Şarkı seçme menüsü ---
+# Şarkı seçme menüsü
 running = True
 clock = pygame.time.Clock()
 while running:
@@ -96,7 +96,7 @@ except Exception as e:
     exit()
 
 
-# --- Görselleştirme sınıfları ---
+# Görselleştirme sınıfları
 class AudioVisualizer:
     def __init__(self, width, height):
         self.width = width
@@ -149,7 +149,7 @@ class ParticleSystem:
         for p in self.particles:
             cv2.circle(frame, (int(p['x']), int(p['y'])), int(p['size']), p['color'], -1)
 
-# --- Yardımcı ---
+# --- Yardımcı --- (gpt)
 def calculate_distance(x1, y1, x2, y2):
     return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
 
@@ -173,7 +173,7 @@ def check_pause_gesture(hand_landmarks):
     except:
         return abs(thumb_y - index_y) < 0.05
 
-# --- Ana döngü ---
+# Ana döngü 
 visualizer = AudioVisualizer(int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)), int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)))
 particles = ParticleSystem()
 paused = False
